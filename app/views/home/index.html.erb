@@ -1,0 +1,7 @@
+
+<% if logged_in? %>
+    <p>Logged in as <%= current_user.name %></p>
+<% else %>
+
+    <%= link_to "Log in via Foursquare", "/auth/foursquare" %>
+<% end %>
