@@ -26,10 +26,21 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
+gem "binding_of_caller"
+
 gem 'omniauth-foursquare', :git => 'https://github.com/arunagw/omniauth-foursquare.git'
 
 gem 'dotenv-rails'
 
+gem 'httparty'
+
+group :development do
+  gem "better_errors"
+
+end
+gem "json"
+gem "typhoeus"
+gem "quimby"
 
 
 # Use ActiveModel has_secure_password
