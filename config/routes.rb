@@ -3,7 +3,13 @@ resources :sessions
 
  root 'home#index'
 
-  get '/auth/:foursquare/callback', to: 'sessions#create'
+  get '/auth/:provider/callback', to: 'sessions#create'
+
+resources :home do
+  collection do
+    get 'venues_search'
+  end
+end
 
 
   # The priority is based upon order of creation: first created -> highest priority.

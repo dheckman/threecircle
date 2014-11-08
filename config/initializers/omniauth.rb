@@ -1,3 +1,3 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :foursquare, ENV['FOURSQUARE_KEY'], ENV['FOURSQUARE_SECRET']
+  provider :foursquare, "4N23RFF1XUH1AA3AWBJFRPVR1SSMZU4FDU3PW1ADP5HTXHF4", "YHWQ322EJ2D5NMLKX5PY0432ZOZJV4W2XTK1ZUT315EJEIFD"
 end
