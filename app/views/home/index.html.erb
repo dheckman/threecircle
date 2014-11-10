@@ -1,24 +1,16 @@
-<<<<<<< HEAD
 <% if !logged_in? %>
 <H1>WELCOME TO THREECIRCLE!</H1>
     <% end %>
 <% if logged_in? %>
     <h1>Thanks for logging in, <%= current_user.name %>!</h1>
     <h4>Here's a random list of venues:</h4>
-   <% @venues.each do |venue| %>
-        <ul>
-          <li>
-            <%= venue["name"] %>
-          </li>
-        </ul>
-    <% end %>
+
     <% else %>
     <%= link_to image_tag("https://ss1.4sqi.net/img/connectTo-990dd166e85a12426a6f57634875256c.png"), "/auth/foursquare" %>
 
 <% end %>
 <br>
 <%= link_to "Venue Search", '/home/venues_search' %>
-=======
 <style type="text/css">
   html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
 </style>
@@ -56,8 +48,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwy_qWR3nMG_5QQxLcB0O3nmk
 
 </script>
 
-<% if logged_in? %>
-<h3>Logged in as <%= current_user.name %></h3>
+
 
 <div id="map-canvas" style='height: 50%'></div>
 
@@ -86,10 +77,8 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwy_qWR3nMG_5QQxLcB0O3nmk
   <% end %>
 </tbody>
 </table>
-<% end %>
 </div>
 
 
 
->>>>>>> a4e7cac6dac0da02a103a1f96995aa9175a034d7
 
