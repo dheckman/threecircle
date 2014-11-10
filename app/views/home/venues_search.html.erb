@@ -1,8 +1,16 @@
 <h1> OH HEY</h1>
+<form name="input" action="venues_search" method="get">
+  Search <input type="text" name="name" id="name" >
+  <input type="submit" value="Submit">
+</form>
 
-<% if @venues %>
-    <% @venues.each do |venue| %>
-        <%= link_to "venue", venue.name %>
+
+<% if @places %>
+    <% @places.each do |place| %>
+        <ul>
+        <li><%=  place["name"] %></li>
+        </ul>
     <% end %>
 <% end %>
+<%= link_to "Home", root_path %>
 

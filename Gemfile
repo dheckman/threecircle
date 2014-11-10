@@ -34,6 +34,8 @@ gem 'dotenv-rails'
 
 gem 'httparty'
 
+gem 'simple_form'
+
 group :development do
   gem "better_errors"
 

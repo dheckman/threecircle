@@ -1,8 +1,20 @@
-
-<% if logged_in? %>
-    <p>Logged in as <%= current_user.name %></p>
-   <% @venues.each do |venue| %>
-        <%= link_to venue["name"], venue["name"] %>
+<% if !logged_in? %>
+<H1>WELCOME TO THREECIRCLE!</H1>
     <% end %>
+<% if logged_in? %>
+    <h1>Thanks for logging in, <%= current_user.name %>!</h1>
+    <h4>Here's a random list of venues:</h4>
+   <% @venues.each do |venue| %>
+        <ul>
+          <li>
+            <%= venue["name"] %>
+          </li>
+        </ul>
+    <% end %>
+    <% else %>
+    <%= link_to image_tag("https://ss1.4sqi.net/img/connectTo-990dd166e85a12426a6f57634875256c.png"), "/auth/foursquare" %>
+
 <% end %>
+<br>
+<%= link_to "Venue Search", '/home/venues_search' %>
 

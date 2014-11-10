@@ -11,7 +11,14 @@ class HomeController < ApplicationController
       end
     end
 
-  private
+    def venues_search
+
+        response = HTTParty.get("https://api.foursquare.com/v2/venues/search?near=NewYork&query&client_id=FOURSQUARE_KEY&client_secret=FOURSQUARE_SECRET")
+
+        venue = JSON.parse(response.body)
+        @places = venue["response"]["venues"]
+
+    end
 
 
 

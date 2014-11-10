@@ -1,0 +1,28 @@
+<div class="profile">
+  <div class="content" id="search">
+    <!--<h1>Welcome to <strong>Find Your 'Lators</strong></h1>-->
+
+    <!--# explanation of the site, what it does, how they can use it-->
+
+    <!--<p>Please enter the location for which you would like to <strong>Find Your 'Lators</strong></p>-->
+
+
+    <%= form_tag("index", method: "get") do %>
+        <%= label_tag( "Search for:") %>
+        <%= text_field_tag(:name) %>
+        <%= submit_tag("Search") %>
+    <% end %>
+
+
+  <% if @venues %>
+      binding.pry
+      <% @all.each do |place| %>
+          <ul>
+            <li><%= place["name"] %></li>
+          </ul>
+      <% end %>
+  <% end %>
+
+
+  <br><br>
+<%= link_to "Home", root_path %>
