@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <% if !logged_in? %>
 <H1>WELCOME TO THREECIRCLE!</H1>
     <% end %>
@@ -17,4 +18,78 @@
 <% end %>
 <br>
 <%= link_to "Venue Search", '/home/venues_search' %>
+=======
+<style type="text/css">
+  html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+</style>
+<script type="text/javascript"
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwy_qWR3nMG_5QQxLcB0O3nmkoZ6RfJTI">
+</script>
+
+<script>
+
+    function initialize() {
+        var myLatlng = new google.maps.LatLng(35.9937194540195, -78.89840126037598);
+        var mapOptions = {
+            zoom: 8,
+            center: myLatlng,
+        };
+
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+        });
+
+        var coordinates = <%= @coordinates %>;
+
+        for (i = 0; i < coordinates.length; i++) {
+            new google.maps.Marker({
+                position: new google.maps.LatLng(coordinates[i][0], coordinates[i][1]),
+                map: map,
+            });
+        }
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>
+
+<% if logged_in? %>
+<h3>Logged in as <%= current_user.name %></h3>
+
+<div id="map-canvas" style='height: 50%'></div>
+
+
+<br>
+
+
+<div class="row">
+<table class="large-12 columns">
+  <thead>
+    <tr>
+    <th width="200">Foursquare Venue</th>
+      <th>Address</th>
+      <th width="150">Latitude</th>
+      <th width="150">Longitude</th>
+  </tr>
+</thead>
+<tbody>
+<% @venues.each do |venue| %>
+    <tr>
+      <td><%= venue["name"] %></td>
+      <td><%= venue["location"]["address"] %></td>
+      <td><%= venue["location"]["lat"] %></td>
+      <td>Long: <%= venue["location"]["lng"] %></td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
+<% end %>
+</div>
+
+
+
+>>>>>>> a4e7cac6dac0da02a103a1f96995aa9175a034d7
 
