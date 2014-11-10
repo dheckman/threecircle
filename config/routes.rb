@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+get 'venues/search'
+
 resources :sessions
 
  root 'home#index'
