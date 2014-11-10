@@ -38,7 +38,10 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwy_qWR3nMG_5QQxLcB0O3nmk
 <% if logged_in? %>
 <h3>Logged in as <%= current_user.name %></h3>
 
-<div id="map-canvas" style='height: 50%'></div>
+
+
+
+    <div id="map-canvas" style='height: 50%'></div>
 
 
 <br>
@@ -65,6 +68,8 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwy_qWR3nMG_5QQxLcB0O3nmk
   <% end %>
 </tbody>
 </table>
+<% else %>
+    <%= link_to image_tag("https://ss1.4sqi.net/img/connectTo-990dd166e85a12426a6f57634875256c.png"), "/auth/foursquare" %>
 <% end %>
 </div>
 
